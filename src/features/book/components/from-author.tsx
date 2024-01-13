@@ -13,7 +13,8 @@ const FromAuthor = () => {
                 className="text-black font-[700] text-[52px] lg:text-[56px] 
               leading-[1.15] max-w-[560px] mx-auto lg:mx-0"
               >
-                From the <span className="text-primary">Author's Desk</span>
+                From the{" "}
+                <span className="text-primary">Author&apos;s Desk</span>
               </h1>
 
               <p className="text-lg text-black my-8 max-w-[450px] mx-auto lg:mx-0">
