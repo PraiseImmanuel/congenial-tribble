@@ -12,9 +12,12 @@ const config: Config = {
         hero: 'url("/hero.svg")',
         second: 'url("/bg-two.svg")',
       },
+      fontFamily: {
+        poppins: "",
+      },
       colors: {
         black: "#333",
-        primary: "#81A460",
+        primary: "#7fad54",
       },
     },
   },

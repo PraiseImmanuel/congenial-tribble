@@ -11,17 +11,36 @@ const FromAuthor = () => {
             <div className="flex flex-col my-6">
               <h1
                 className="text-black font-[700] text-[52px] lg:text-[56px] 
-              leading-[1.15] max-w-[560px] mx-auto lg:mx-0"
+              leading-[1.15] max-w-[600px] mx-auto lg:mx-0"
               >
                 From the{" "}
                 <span className="text-primary">Author&apos;s Desk</span>
               </h1>
-
-              <p className="text-lg text-black my-8 max-w-[450px] mx-auto lg:mx-0">
-                20 Things to do before 20 is a compilation of principles and
-                keys that have worked over the years. Success follows
-                principles. Learn the principles and produce the result.
-              </p>
+              <div className="my-8">
+                <p className="text-lg text-black mt-4 max-w-[550px] mx-auto lg:mx-0">
+                  You can compress ten years into ten days; did you know that?
+                  Yes, in ten days or less, you can acquire the same wisdom and
+                  experience gained in ten years. The secret is to learn from
+                  people with experience.
+                </p>
+                <p className="text-lg text-black mt-4 max-w-[550px] mx-auto lg:mx-0">
+                  This book aims to empower young individuals with 20
+                  life-changing secrets for building incredible futures. While
+                  primarily targeted at those under 20, it is applicable to all
+                  young people seeking a transformative life.
+                </p>
+                <p className="text-lg text-black mt-4 max-w-[550px] mx-auto lg:mx-0">
+                  For individuals above 20, the book serves as a motivational
+                  guide, highlighting essential actions to regain control over
+                  life.
+                </p>
+                <p className="text-lg text-black mt-4 max-w-[550px] mx-auto lg:mx-0">
+                  Additionally, it functions as a valuable mentoring resource
+                  for parents, educators, religious institutions, and anyone
+                  working with teenagers and young people, facilitating their
+                  journey toward success and extraordinary adulthood.
+                </p>
+              </div>
               <button className="hidden lg:block py-2.5 px-8 bg-primary text-white text-lg rounded-md w-fit mx-auto lg:mx-0">
                 Buy Ebook Now
               </button>
