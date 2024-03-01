@@ -12,7 +12,7 @@ import {
 
 const links = ["facebook", "instagram", "twitter"];
 const linksSvg = [
-  <RiFacebookBoxLine className="text-xl" />,
+  <RiFacebookBoxLine />,
   <RiInstagramLine />,
   <RiTwitterXFill />,
 ];
