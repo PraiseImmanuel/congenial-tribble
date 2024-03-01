@@ -10,16 +10,16 @@ import {
   RiTwitterXFill,
 } from "react-icons/ri";
 
-const links = ["facebook", "instagram", "twitter"];
 const linksSvg = [
-  <RiFacebookBoxLine />,
-  <RiInstagramLine />,
-  <RiTwitterXFill />,
-];
-const linksRoute = [
-  "https://www.facebook.com/williamsobaedo.greatone",
-  "https://www.instagram.com/williamsobaedo/",
-  "https://twitter.com/obaedo_williams",
+  {
+    svg: <RiFacebookBoxLine />,
+    route: "https://www.facebook.com/williamsobaedo.greatone",
+  },
+  {
+    svg: <RiInstagramLine />,
+    route: "https://www.instagram.com/williamsobaedo/",
+  },
+  { svg: <RiTwitterXFill />, route: "https://twitter.com/obaedo_williams" },
 ];
 
 const Nav = () => {
@@ -41,12 +41,12 @@ const Nav = () => {
             {linksSvg.map((item, index) => (
               <Link
                 key={index}
-                href={linksRoute[index]}
+                href={item.route}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="hover:text-accent transition-all duration-300"
               >
-                {item}
+                {item.svg}
               </Link>
             ))}
           </div>
@@ -73,12 +73,12 @@ const Nav = () => {
                   {linksSvg.map((item, index) => (
                     <Link
                       key={index}
-                      href={linksRoute[index]}
+                      href={item.route}
                       target="_blank"
                       rel="noreferrer noopener"
                       className="hover:text-accent transition-all duration-300"
                     >
-                      {item}
+                      {item.svg}
                     </Link>
                   ))}
                 </div>
