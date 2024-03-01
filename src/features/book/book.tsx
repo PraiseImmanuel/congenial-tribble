@@ -1,16 +1,20 @@
-import React from "react";
-import Wrapper from "../shared/wrapper";
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
 import Hero from "./components/hero";
 import Layout from "./components/layout";
 import FromAuthor from "./components/from-author";
+import Modal from "../shared/modal/modal";
 
 const Book = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
-    <Layout>
-      <Hero />
-      <FromAuthor />
-    </Layout>
+    <>
+      <Layout>
+        <Hero setModalOpen={setModalOpen} />
+        <FromAuthor setModalOpen={setModalOpen} />
+      </Layout>
+      {modalOpen && <Modal setModalOpen={setModalOpen} />}
+    </>
   );
 };
 

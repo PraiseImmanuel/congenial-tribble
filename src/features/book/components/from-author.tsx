@@ -2,7 +2,14 @@ import Wrapper from "@/features/shared/wrapper";
 import Image from "next/image";
 import React from "react";
 
-const FromAuthor = () => {
+interface IProps {
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const FromAuthor: React.FC<IProps> = ({ setModalOpen }) => {
+  const handleBuy = () => {
+    setModalOpen((prev) => true);
+  };
   return (
     <>
       <div className="bg-second bg-no-repeat bg-right-top py-16">
@@ -41,7 +48,10 @@ const FromAuthor = () => {
                   journey toward success and extraordinary adulthood.
                 </p>
               </div>
-              <button className="hidden lg:block py-2.5 px-8 bg-primary text-white text-lg rounded-md w-fit mx-auto lg:mx-0">
+              <button
+                onClick={handleBuy}
+                className="hidden lg:block py-2.5 px-8 bg-primary text-white text-lg rounded-md w-fit mx-auto lg:mx-0"
+              >
                 Buy Ebook Now
               </button>
             </div>
@@ -55,7 +65,10 @@ const FromAuthor = () => {
                   alt="wiliams obaedo"
                 />
               </div>
-              <button className="block lg:hidden py-2.5 px-8 bg-primary text-white text-lg rounded-md w-fit mx-auto lg:mx-0">
+              <button
+                onClick={handleBuy}
+                className="block lg:hidden py-2.5 px-8 bg-primary text-white text-lg rounded-md w-fit mx-auto lg:mx-0"
+              >
                 Buy Ebook Now
               </button>
             </div>

@@ -2,7 +2,14 @@ import Wrapper from "@/features/shared/wrapper";
 import Image from "next/image";
 import React from "react";
 
-const Hero = () => {
+interface IProps {
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Hero: React.FC<IProps> = ({ setModalOpen }) => {
+  const handleBuy = () => {
+    setModalOpen((prev) => true);
+  };
   return (
     <>
       <div className="bg-hero bg-no-repeat bg-right-top pt-[120px] md:pt-[25px] pb-[70px]">
@@ -24,7 +31,10 @@ const Hero = () => {
                   soars to levels of achievement you could never have imagined?
                 </p>
               </div>
-              <button className="py-2.5 px-8 bg-primary text-white text-lg rounded-md w-fit mx-auto lg:mx-0">
+              <button
+                onClick={handleBuy}
+                className="py-2.5 px-8 bg-primary text-white text-lg rounded-md w-fit mx-auto lg:mx-0"
+              >
                 Buy Ebook Now
               </button>
             </div>
