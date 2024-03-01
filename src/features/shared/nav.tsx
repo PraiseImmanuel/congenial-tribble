@@ -70,17 +70,15 @@ const Nav = () => {
                   Connect With Me
                 </p>
                 <div className="flex flex-col gap-y-6 items-center">
-                  {links.map((link, index) => (
+                  {linksSvg.map((item, index) => (
                     <Link
+                      key={index}
                       href={linksRoute[index]}
                       target="_blank"
                       rel="noreferrer noopener"
-                      key={index}
-                      className="border-0 border-b-transparent border-b-[2px] pb-1 cursor-pointer duration-400 text-primary
-                      transition-all hover:border-primary/80 hover:scale-[0.925] px-2 capitalize text-lg font-[500] flex items-center gap-2"
+                      className="hover:text-accent transition-all duration-300"
                     >
-                      <span className="text-lg">{linksSvg[index]}</span>
-                      {link}
+                      {item}
                     </Link>
                   ))}
                 </div>
