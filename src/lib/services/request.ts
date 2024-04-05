@@ -5,7 +5,7 @@ const api: AxiosInstance = axios.create({
   baseURL: "https://verbose-umbrella-production-71c3.up.railway.app/",
 });
 
-export const sendPdf = async (data: { email: string }) => {
+export const sendPdf = async (data: { email: string; name: string }) => {
   try {
     const response: AxiosResponse = await api.post(
       "api/email/send-email",

@@ -18,7 +18,7 @@ const ClientDetails: React.FC<IProps> = ({ setModalOpen }) => {
   const [isPaying, setIsPaying] = useState(true);
   const [isSending, setIsSending] = useState(false);
   const config = {
-    public_key: "FLWPUBK_TEST-b42d5f80706c9e8c07131ef0a470ab61-X",
+    public_key: "FLWPUBK_TEST-d51fb34f92d898ecf624c25a70802bd1-X",
     tx_ref: Date.now().toString(),
     amount: 2200,
     currency: "NGN",
@@ -50,12 +50,14 @@ const ClientDetails: React.FC<IProps> = ({ setModalOpen }) => {
               closePaymentModal();
               setIsPaying((prevIsSending) => false);
               setIsSending((prevIsSending) => true);
-              sendPdf({ email: formField.email }).then((res) => {
-                console.log(res);
-                if (res?.success) {
-                  setIsSending((prevIsSending) => (prevIsSending = false));
+              sendPdf({ email: formField.email, name: formField.name }).then(
+                (res) => {
+                  console.log(res);
+                  if (res?.success) {
+                    setIsSending((prevIsSending) => (prevIsSending = false));
+                  }
                 }
-              });
+              );
             } else {
               toast.error("Wrong Credentials. Please try again.", {
                 toastId: "1",
