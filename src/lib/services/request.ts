@@ -24,6 +24,7 @@ export const sendPdf = async (data: { email: string; name: string }) => {
       } else if (error.request) {
         // Handle network-related error (no response received)
         console.log("Something went wrong");
+        return { success: false };
       }
     } else {
       // Handle other types of errors

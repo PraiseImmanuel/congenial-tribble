@@ -5,10 +5,10 @@ import React from "react";
 interface IProps {
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isSending: boolean;
+  isFailed: boolean;
 }
 
-const Notifications = ({ isSending, setModalOpen }: IProps) => {
-  console.log(isSending);
+const Notifications = ({ isSending, setModalOpen, isFailed }: IProps) => {
   return (
     <div
       className="flex flex-col justify-center transition-all items-center
@@ -25,18 +25,24 @@ const Notifications = ({ isSending, setModalOpen }: IProps) => {
               height={120}
             />
             <p className="-mt-3">Processing Delivery...</p>
+            <p className=" text-sm mt-2 text-red-600">
+              Please do not refresh this page
+            </p>
           </div>
         ) : (
-          <div className="text-center">
-            <Image
-              src="/loading.gif"
-              alt="loading"
-              width={120}
-              height={120}
-              className="mx-auto"
-            />
-            <h2 className="-mt-3 text-xl font-[600]">Congratulations!</h2>
-            <p className="">Book has been sent successfully to your email.</p>
+          <div className="text-center pt-12">
+            <h2
+              className={`${
+                isFailed ? "text-red-600" : "text-[#333]"
+              }-mt-3 text-xl font-[600]`}
+            >
+              {isFailed ? "Error" : "Congratulations!"}
+            </h2>
+            <p className="mt-2 text-sm text-[#333]/70 max-w-[200px]">
+              {isFailed
+                ? "Book has been sent successfully to your email."
+                : "Reach out to me on any of my Social media handle."}
+            </p>
 
             <button
               onClick={() =>

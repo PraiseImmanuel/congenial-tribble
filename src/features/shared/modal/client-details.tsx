@@ -16,6 +16,7 @@ const ClientDetails: React.FC<IProps> = ({ setModalOpen }) => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isPaying, setIsPaying] = useState(true);
+  const [isFailed, setIsFailed] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const config = {
     public_key: "FLWPUBK_TEST-d51fb34f92d898ecf624c25a70802bd1-X",
@@ -48,18 +49,19 @@ const ClientDetails: React.FC<IProps> = ({ setModalOpen }) => {
             console.log(response);
             if (response.status === "completed") {
               closePaymentModal();
-              setIsPaying((prevIsSending) => false);
-              setIsSending((prevIsSending) => true);
+              setIsPaying(false);
+              setIsSending(true);
               sendPdf({ email: formField.email, name: formField.name }).then(
                 (res) => {
-                  console.log(res);
                   if (res?.success) {
-                    setIsSending((prevIsSending) => (prevIsSending = false));
+                    setIsSending(false);
+                  } else {
+                    setIsFailed(true);
                   }
                 }
               );
             } else {
-              toast.error("Wrong Credentials. Please try again.", {
+              toast.error("Wrong Credentials, Refresh Page", {
                 toastId: "1",
               });
             }
@@ -198,7 +200,11 @@ const ClientDetails: React.FC<IProps> = ({ setModalOpen }) => {
       )}
 
       {!isPaying && (
-        <Notifications isSending={isSending} setModalOpen={setModalOpen} />
+        <Notifications
+          isSending={isSending}
+          isFailed={isFailed}
+          setModalOpen={setModalOpen}
+        />
       )}
     </div>
   );
