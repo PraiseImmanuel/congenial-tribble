@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosResponse, AxiosError } from "axios";
 
 // Create an instance of axios with baseURL
 const api: AxiosInstance = axios.create({
-  baseURL: "https://verbose-umbrella-production-71c3.up.railway.app/",
+  baseURL: "https://williamsobaedo.onrender.com",
 });
 
 export const sendPdf = async (data: { email: string; name: string }) => {

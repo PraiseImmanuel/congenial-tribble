@@ -24,7 +24,8 @@ const Notifications = ({ isSending, setModalOpen, isFailed }: IProps) => {
               width={120}
               height={120}
             />
-            <p className="-mt-3">Processing Delivery...</p>
+            <p className="-mt-3 text-black/90">Processing Delivery...</p>
+            <p className="mt-1 text-black/50">This might a take a while</p>
             <p className=" text-sm mt-2 text-red-600">
               Please do not refresh this page
             </p>
@@ -39,9 +40,7 @@ const Notifications = ({ isSending, setModalOpen, isFailed }: IProps) => {
               {isFailed ? "Error" : "Congratulations!"}
             </h2>
             <p className="mt-2 text-sm text-[#333]/70 max-w-[200px]">
-              {isFailed
-                ? "Book has been sent successfully to your email."
-                : "Reach out to me on any of my Social media handle."}
+              Feel free Reach out to me on any of my Social media handle.
             </p>
 
             <button
