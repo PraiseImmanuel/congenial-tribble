@@ -24,9 +24,13 @@ const Notifications = ({ isSending, setModalOpen, isFailed }: IProps) => {
               width={120}
               height={120}
             />
-            <p className="-mt-3 text-black/90">Processing Delivery...</p>
-            <p className="mt-1 text-black/50">This might a take a while</p>
-            <p className=" text-sm mt-2 text-red-600">
+            <p className="-mt-3 text-black/90 font-bold">
+              Processing Delivery...
+            </p>
+            <p className="mt-2 text-sm text-black/50">
+              This might a take a while
+            </p>
+            <p className=" text-sm text-red-600">
               Please do not refresh this page
             </p>
           </div>
@@ -35,11 +39,14 @@ const Notifications = ({ isSending, setModalOpen, isFailed }: IProps) => {
             <h2
               className={`${
                 isFailed ? "text-red-600" : "text-[#333]"
-              }-mt-3 text-xl font-[600]`}
+              }-mt-3 text-xl font-[700]`}
             >
               {isFailed ? "Error" : "Congratulations!"}
             </h2>
             <p className="mt-2 text-sm text-[#333]/70 max-w-[200px]">
+              Delivery Successful.
+            </p>
+            <p className="text-sm text-[#333]/70 max-w-[200px]">
               Feel free Reach out to me on any of my Social media handle.
             </p>
 
