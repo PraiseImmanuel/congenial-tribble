@@ -5,11 +5,11 @@ import Footer from "@/features/shared/footer";
 import Nav from "@/features/shared/nav";
 import React from "react";
 
-interface LatoutProps {
+interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LatoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Nav />
